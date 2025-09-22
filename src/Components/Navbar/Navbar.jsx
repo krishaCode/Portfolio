@@ -4,6 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import { Navbar as BootstrapNavbar } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from 'react';
+import logo from '../../assets/img/logo.svg';
+import navicon1 from '../../assets/img/nav-icon1.svg';
+import navicon2 from '../../assets/img/nav-icon2.svg';
+import navicon3 from '../../assets/img/nav-icon3.svg';
+import './Navbar.css';
 const Navbar = () => {
   const[activeLink, setActiveLink] = useState('home');
   const[scrolled, setScrolled] = useState(false);
@@ -39,9 +44,9 @@ const Navbar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icons">
-              <a href="#"><img src='https://via.placeholder.com/30' alt='Social Icon 1'/></a>
-              <a href="#"><img src='https://via.placeholder.com/30' alt='Social Icon 2'/></a>
-              <a href="#"><img src='https://via.placeholder.com/30' alt='Social Icon 3'/></a>
+              <a href="#"><img src={navicon1} alt=''/></a>
+              <a href="#"><img src={navicon2} alt=''/></a>
+              <a href="#"><img src={navicon3} alt=''/></a>
             </div>
             <button className="vvd" onClick={() => console.log("Connect button clicked")}><span>Let’s Connect</span></button>
           </span>

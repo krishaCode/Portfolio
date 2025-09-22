@@ -1,8 +1,37 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  font-family: centra;
+  src: url(./assets/font/CentraNo2-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: centra;
+  src: url(./assets/font/CentraNo2-Medium.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: centra;
+  src: url(./assets/font/CentraNo2-Book.ttf);
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212;
+  color: white;
+  font-family: 'centra', sans-serif;
 }
 
 .logo {
