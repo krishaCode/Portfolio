@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
      <BootstrapNavbar expand="lg" className={scrolled ? "scrolled" : ""} >
       <Container>
-        <BootstrapNavbar.Brand href="#home">React-Bootstrap</BootstrapNavbar.Brand>
+        
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" >
           <span className="navbar-toggler-icon"></span>
         </BootstrapNavbar.Toggle>

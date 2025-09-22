@@ -44,6 +44,13 @@
   padding: 18px 34px;
   position: relative;
   transition: 0.3s ease-in-out;
+  border-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+.banner button span {
+  z-index: 1;
+  position: relative;
 }
 .banner button::before {
   content: "";
@@ -58,6 +65,8 @@
 }
 .banner button:hover {
   color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 .banner button:hover::before {
   content: "";
