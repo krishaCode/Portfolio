@@ -12,6 +12,9 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.6",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",
