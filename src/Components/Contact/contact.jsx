@@ -2,17 +2,18 @@ import React from 'react'
 import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import contactImg from '../../assets/img/contact-img.svg'
-import { Phone } from 'react-bootstrap-icons'
+import './contact.css'
 
 function Contact() {
-    const [formDetails, setFormDetails] = useState({
+    const formInitialDetails = {
         firstName: '',
         lastName: '',
         email: '',
         phone: '',
         message: ''
-    });
+    };
 
+    const [formDetails, setFormDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState({});
 
@@ -23,14 +24,32 @@ function Contact() {
         })
     }
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText("Sending...");
-        // Add your form submission logic here
-        setTimeout(() => {
+        
+        try {
+            let response = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify(formDetails),
+            });
+            
             setButtonText("Send");
-            setStatus({ success: true, message: "Message sent successfully!" });
-        }, 2000);
+            let result = await response.json();
+            setFormDetails(formInitialDetails);
+            
+            if (result.code === 200) {
+                setStatus({ success: true, message: "Message sent successfully!" });
+            } else {
+                setStatus({ success: false, message: "Something went wrong, please try again later." });
+            }
+        } catch (error) {
+            setButtonText("Send");
+            setStatus({ success: false, message: "Network error, please try again later." });
+        }
     }
 
     return (
