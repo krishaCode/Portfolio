@@ -1,18 +1,22 @@
 import React from 'react'
+import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Banner from './Components/Banner/Banner'
 import Skills from './Components/Skills/Skills'
 import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/contact'
-import './App.css'
-const App = () => {
+import Footer from './Components/Footer/footer'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+function App() {
   return (
-    <div>
-      <Navbar/>
-      <Banner/>
-      <Skills/>
-      <Projects/>
-      <Contact/>
+    <div className="App">
+      <Navbar />
+      <Banner />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   )
 }
