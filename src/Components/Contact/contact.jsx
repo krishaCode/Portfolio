@@ -29,7 +29,7 @@ function Contact() {
         setButtonText("Sending...");
         
         try {
-            let response = await fetch("http://localhost:5000/contact", {
+            let response = await fetch("http://localhost:8000/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
@@ -42,9 +42,9 @@ function Contact() {
             setFormDetails(formInitialDetails);
             
             if (result.code === 200) {
-                setStatus({ success: true, message: "Message sent successfully!" });
+                setStatus({ success: true, message: result.message || "Message sent successfully!" });
             } else {
-                setStatus({ success: false, message: "Something went wrong, please try again later." });
+                setStatus({ success: false, message: result.message || "Something went wrong, please try again later." });
             }
         } catch (error) {
             setButtonText("Send");
