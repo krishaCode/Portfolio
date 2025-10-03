@@ -1,3 +1,29 @@
+/* Custom logo styling */
+.navbar-logo {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 32px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.navbar-logo .krishan {
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+.navbar-logo .malinda {
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+/* Hover effect for logo */
+.navbar-logo:hover .krishan {
+  color: #fff;
+}
+.navbar-logo:hover .malinda {
+  color: #000;
+}
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;

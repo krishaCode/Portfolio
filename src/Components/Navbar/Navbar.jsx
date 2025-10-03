@@ -32,12 +32,15 @@ const Navbar = () => {
   return (
      <BootstrapNavbar expand="lg" className={scrolled ? "scrolled" : ""} >
       <Container>
+        <span className="navbar-logo" style={{fontWeight:700, fontSize: '2rem', cursor:'pointer', display:'inline-block', marginRight:'32px'}}>
+          <span className="krishan">Krishan</span> <span className="malinda">Malinda</span>
+        </span>
         
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" >
           <span className="navbar-toggler-icon"></span>
         </BootstrapNavbar.Toggle>
         <BootstrapNavbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="mx-auto">
             <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
             <Nav.Link href="#skill" className={activeLink === 'skill' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skill')}>Skill</Nav.Link>
             <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')} >Projects</Nav.Link>
