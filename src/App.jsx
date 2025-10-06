@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Banner from './Components/Banner/Banner'
 import Skills from './Components/Skills/Skills'
+import AboutMe from './Components/Aboutme/aboutme'
 import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/contact'
 import Footer from './Components/Footer/footer'
@@ -13,8 +14,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner />
-      <Skills />
-      <Projects />
+  <Skills />
+  <Aboutme />
+     <Projects />
       <Contact />
       <Footer />
     </div>

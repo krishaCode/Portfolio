@@ -2,13 +2,14 @@ import { useState,useEffect } from 'react'
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArrowRightCircle } from 'react-bootstrap-icons'
-import headerImg from '../../assets/img/header-img.svg'
+import headerImg from '../../assets/img/profile.png'
 import './Banner.css'
 
 function Banner() {
  const [loopNum, setLoopNum] = useState(0);
  const [isDeleting, setIsDeleting] = useState(false);
- const toRotate = [ "Krishan", "Web Developer", "Web Designer", "UI/UX Designer" ];
+ const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
+ const name = 'Krishan';
  const [text, setText] = useState('');
  const [delta, setDelta] = useState(300 - Math.random() * 100);
  const period = 2000;
@@ -45,8 +46,10 @@ const tick = () => {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to my Portfolio</span>
-            <h1>{`Hi! I'm `}<span className="wrap">{text}</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1>{`Hi! I'm `}<span className="name">{name}</span></h1>
+            <h2 className="roles"><span className="wrap">{text}</span><span className="cursor" aria-hidden="true">&nbsp;</span></h2>
+            <p>I’m a dedicated web developer passionate about building responsive, user-friendly websites using modern technologies like React, Node.js, and Firebase.
+</p>
             <button onClick={() => console.log('connect')}>Let's Connect <ArrowRightCircle size={25} /></button>
           </Col>
           <Col xs={12} md={6} xl={5}>

@@ -12,11 +12,13 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^5.1.0",
+    "lucide-react": "^0.544.0",
     "nodemailer": "^7.0.6",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.10",
