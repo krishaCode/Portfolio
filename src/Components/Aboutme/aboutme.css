@@ -1,0 +1,141 @@
+/* About Section - matches the dark, clean two-column layout in the screenshot */
+
+.about-section {
+	background: #0f172a; /* slate-800 like */
+	padding: 80px 0;
+}
+
+.about-container {
+	max-width: 1100px;
+}
+
+.about-header {
+	text-align: center;
+	margin-bottom: 64px;
+}
+
+.about-title {
+	font-size: 40px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 12px;
+}
+
+.about-subtitle {
+	color: #9ca3af; /* gray-400 */
+	line-height: 1.7;
+}
+
+.about-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 48px;
+}
+
+@media (min-width: 1024px) {
+	.about-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.section-title {
+	font-size: 24px;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.about-paragraphs p {
+	color: #cbd5e1; /* slate-300 */
+	line-height: 1.8;
+	margin-bottom: 12px;
+}
+
+/* Cards for qualities (left) */
+.qualities {
+	margin-top: 24px;
+}
+
+.quality-card {
+	background: rgba(30, 41, 59, 0.7); /* slate-700/70 */
+	border: 1px solid rgba(148, 163, 184, 0.12); /* subtle border */
+	border-radius: 12px;
+	padding: 24px;
+	transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quality-card:hover {
+	transform: translateY(-2px);
+	background: rgba(30, 41, 59, 0.9);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.quality-icon {
+	color: #60a5fa; /* blue-400 */
+	margin-bottom: 8px;
+}
+
+.quality-title {
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.quality-desc {
+	color: #94a3b8; /* slate-400 */
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+/* Skills column (right) */
+.skill-card {
+	background: rgba(30, 41, 59, 0.5); /* slate-700/50 */
+	border: 1px solid rgba(148, 163, 184, 0.12);
+	border-radius: 12px;
+	padding: 24px;
+}
+
+.skill-category {
+	color: #60a5fa;
+	font-weight: 600;
+	margin-bottom: 12px;
+}
+
+.skill-badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.badge {
+	display: inline-block;
+	background: rgba(37, 99, 235, 0.18); /* blue-600/20 */
+	color: #93c5fd; /* blue-300 */
+	padding: 6px 12px;
+	border-radius: 999px;
+	font-size: 13px;
+	border: 1px solid rgba(59, 130, 246, 0.25);
+	letter-spacing: 0.2px;
+}
+
+.badge:hover {
+	background: rgba(37, 99, 235, 0.28);
+}
+
+/* Utility mimic for spacing classes used in JSX to avoid relying on Tailwind */
+.py-20 { padding-top: 80px; padding-bottom: 80px; }
+.mb-16 { margin-bottom: 64px; }
+.mt-8 { margin-top: 32px; }
+
+/* Container mimic */
+.container {
+	width: 100%;
+	padding-left: 24px;
+	padding-right: 24px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1100px; } }
+
