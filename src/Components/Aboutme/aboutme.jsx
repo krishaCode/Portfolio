@@ -48,7 +48,7 @@ const About = () => {
 
 
   return (
-     <section id="about" className="about-section py-20 bg-slate-800">
+    <section id="about" className="about-section py-20">
       <div className="about-container container mx-auto px-6">
         <div className="about-header text-center mb-16">
           <h2 className="about-title text-4xl font-bold text-white mb-4">About Me</h2>
@@ -82,13 +82,13 @@ const About = () => {
 
             {/* Qualities */}
             <div className="qualities grid sm:grid-cols-2 gap-6 mt-8">
-              {qualities.map((quality, index) => (
-                <div key={index} className="quality-card bg-slate-700/50 p-6 rounded-lg">
-                  <quality.icon className="quality-icon text-blue-400 mb-3" size={32} />
-                  <h4 className="quality-title text-white font-semibold mb-2">{quality.title}</h4>
-                  <p className="quality-desc text-gray-400 text-sm">{quality.description}</p>
-                </div>
-              ))}
+                {qualities.map((quality, index) => (
+                  <div key={index} className="quality-card">
+                    <quality.icon className="quality-icon" size={32} />
+                    <h4 className="quality-title">{quality.title}</h4>
+                    <p className="quality-desc">{quality.description}</p>
+                  </div>
+                ))}
             </div>
           </div>
 

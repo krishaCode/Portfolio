@@ -1,8 +1,11 @@
 /* About Section - matches the dark, clean two-column layout in the screenshot */
 
 .about-section {
-	background: #0f172a; /* slate-800 like */
+	/* gradient background with a solid fallback color */
+	background: linear-gradient(135deg, #040106 0%, #140421 60%, #2a0c31 100%);
+	background-color: #172444; /* fallback for very old browsers */
 	padding: 80px 0;
+	color: #e6eef8;
 }
 
 .about-container {
@@ -62,6 +65,19 @@
 	transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* layout for qualities grid */
+.qualities {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px; /* increased vertical spacing */
+}
+
+@media (min-width: 640px) {
+	.qualities { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+.quality-card { margin: 0; }
+
 .quality-card:hover {
 	transform: translateY(-2px);
 	background: rgba(30, 41, 59, 0.9);
@@ -91,6 +107,17 @@
 	border: 1px solid rgba(148, 163, 184, 0.12);
 	border-radius: 12px;
 	padding: 24px;
+}
+
+/* layout for skill groups: add spacing between each skill-card */
+.skill-groups {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 18px; /* vertical spacing between skill cards */
+}
+
+@media (min-width: 768px) {
+	.skill-groups { grid-template-columns: 1fr; gap: 20px; }
 }
 
 .skill-category {
