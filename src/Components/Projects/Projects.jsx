@@ -4,6 +4,8 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../../assets/img/project-img1.png";
 import projImg2 from "../../assets/img/project-img2.png";
 import projImg3 from "../../assets/img/project-img3.png";
+import projImg4 from "../../assets/img/project-img4.png";
+import projImg5 from "../../assets/img/project-img5.png";
 import colorSharp2 from "../../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from 'react-on-screen';
@@ -28,12 +30,12 @@ function Projects() {
         {
             title: "Business Startup",
             description: "Design & Development", 
-            imgUrl: projImg1,
+            imgUrl: projImg4,
         },
         {
             title: "Business Startup",
             description: "Design & Development",
-            imgUrl: projImg2,
+            imgUrl: projImg5,
         },
         {
             title: "Business Startup",
