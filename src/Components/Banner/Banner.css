@@ -139,3 +139,93 @@
   border-right: 0.08em solid #666;
 }
 
+/* Actions: connect + download */
+.banner-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  align-items: center;
+  white-space: nowrap; /* prevent buttons from wrapping to next line */
+}
+.btn-connect {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,1);
+  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-connect {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  border-radius: 0;
+}
+
+.btn-connect::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-connect:hover {
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-connect:hover::before {
+  width: 100%;
+}
+
+.btn-connect svg {
+  font-size: 20px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+
+.btn-connect:hover svg {
+  margin-left: 25px;
+}
+.banner-actions .btn-connect,
+.banner-actions .btn-download,
+.banner-actions button { margin-top: 0; }
+
+/* Unified sizing so both action controls match exactly */
+.banner-actions .btn-connect,
+.banner-actions .btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 24px; /* same horizontal padding */
+  height: 48px; /* fixed height so both are identical */
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.btn-download {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border-radius: 0; /* match .btn-connect */
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,1); /* give same border weight for visual balance */
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-download:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
+
+/* Optional helper: give both buttons equal width (uncomment/use when desired) */
+.banner-actions .action-equal { flex: 1 1 0; text-align: center; }
+

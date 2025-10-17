@@ -76,39 +76,55 @@
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+  height: 260px; /* consistent card height so all images fit equally */
 }
+
+/* Make images fill their wrapper and crop consistently */
 .proj-imgbx img {
   display: block;
   width: 100%;
-  height: 260px; /* fixed height to match project-img3 size */
-  object-fit: cover; /* crop/fit images uniformly */
-  transition: transform 0.4s ease;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.35s ease;
 }
-.proj-imgbx:hover img { transform: scale(1.03); }
+
+.proj-imgbx:hover img {
+  transform: scale(1.03);
+  opacity: 0.2; /* dim image on hover */
+}
+
 .proj-imgbx::before {
   content: "";
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  opacity: 0.85;
+  opacity: 0; /* start transparent; we'll darken image instead for clarity */
   position: absolute;
   width: 100%;
-  height: 0;
-  transition: 0.4s ease-in-out;
-}
-.proj-imgbx:hover::before {
   height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 0.35s ease-in-out;
+  pointer-events: none;
 }
+
 .proj-txtx {
   position: absolute;
   text-align: center;
-  top: 65%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.5s ease-in-out;
+  transition: transform 0.35s ease, opacity 0.35s ease;
   opacity: 0;
   width: 100%;
+  padding: 0 16px;
+  z-index: 2;
 }
+
+.proj-imgbx:hover::before {
+  opacity: 0.65; /* subtle dark overlay to increase contrast for text */
+}
+
 .proj-imgbx:hover .proj-txtx {
-  top: 50%;
+  transform: translate(-50%, -50%) translateY(0);
   opacity: 1;
 }
 .proj-txtx h4 {
@@ -122,6 +138,30 @@
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.8px;
+}
+
+.proj-links {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.proj-link:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
 }
 .background-image-right {
   top: 20%;
