@@ -1,9 +1,12 @@
 .banner {
   margin-top: 0;
-  /* Reduced top padding so banner sits closer to the fixed navbar */
-  padding: 110px 0 60px 0;
+  min-height: 100vh; /* fill the viewport */
+  display: flex;
+  align-items: center; /* vertically center the container */
+  /* padding adjusted for visual spacing; container is centered so less top padding needed */
+  padding: 40px 0;
   background-image: url('../../assets/img/banner-bg1.jpg');
-  background-position: top center;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -90,6 +93,13 @@
   animation: updown 3s linear infinite;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 767px) {
+  .banner { padding: 24px 0; }
+  .banner h1 { font-size: 40px; }
+  .banner .roles { font-size: 20px; }
+  .banner-actions { margin-top: 18px; }
 }
 .banner .wrap {
   color: #AA367C;

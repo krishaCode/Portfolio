@@ -7,7 +7,7 @@ import { useState } from 'react';
 import logo from '../../assets/img/logo.svg';
 import navicon1 from '../../assets/img/nav-icon1.svg';
 import navicon2 from '../../assets/img/nav-icon2.svg';
-import navicon3 from '../../assets/img/nav-icon3.svg';
+import navicon3 from '../../assets/img/nav-icon3.png';
 import './Navbar.css';
 const Navbar = () => {
   const[activeLink, setActiveLink] = useState('home');
@@ -47,9 +47,9 @@ const Navbar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icons">
-              <a href="#"><img src={navicon1} alt=''/></a>
-              <a href="#"><img src={navicon2} alt=''/></a>
-              <a href="#"><img src={navicon3} alt=''/></a>
+              <a href="https://www.linkedin.com/in/krishan-malinda-849b5534b"><img src={navicon1} alt=''/></a>
+              <a href="https://github.com/krishaCode"><img src={navicon2} alt=''/></a>
+              <a href="gkmalinda@std.foc.sab.ac.lk"><img src={navicon3} alt=''/></a>
             </div>
             <button className="vvd" onClick={() => console.log("Connect button clicked")}><span>Let’s Connect</span></button>
           </span>
