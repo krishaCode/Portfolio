@@ -29,6 +29,17 @@ const Navbar = () => {
     setActiveLink(value);
   }
 
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el && typeof el.scrollIntoView === 'function') {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveLink('contact');
+    } else {
+      // fallback to anchor navigation
+      window.location.href = '#contact';
+    }
+  }
+
   return (
      <BootstrapNavbar expand="lg" className={scrolled ? "scrolled" : ""} >
       <Container>
@@ -51,7 +62,7 @@ const Navbar = () => {
               <a href="https://github.com/krishaCode"><img src={navicon2} alt=''/></a>
               <a href="gkmalinda@std.foc.sab.ac.lk"><img src={navicon3} alt=''/></a>
             </div>
-            <button className="vvd" onClick={() => console.log("Connect button clicked")}><span>Let’s Connect</span></button>
+            <button className="vvd" onClick={scrollToContact}><span>Let’s Connect</span></button>
           </span>
         </BootstrapNavbar.Collapse>
       </Container>

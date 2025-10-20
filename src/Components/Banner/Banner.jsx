@@ -52,7 +52,16 @@ const tick = () => {
             <p>I’m a dedicated web developer passionate about building responsive, user-friendly websites using modern technologies like React, Node.js, and Firebase.
 </p>
             <div className="banner-actions">
-              <button onClick={() => console.log('connect')} className="btn-connect">Let's Connect <ArrowRightCircle size={25} /></button>
+              <button onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) {
+                  // account for fixed header height if needed
+                  const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                } else {
+                  window.location.href = '#contact';
+                }
+              }} className="btn-connect">Let's Connect <ArrowRightCircle size={25} /></button>
               <a href={cv} download className="btn-connect btn-download" aria-label="Download CV">Download My CV</a>
             </div>
           </Col>
