@@ -29,6 +29,7 @@ function Contact() {
         setButtonText("Sending...");
         
         try {
+            // POST to backend via Vite dev proxy: /api -> http://localhost:8000
             let response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
@@ -46,11 +47,11 @@ function Contact() {
             } else {
                 setStatus({ success: false, message: result.message || "Something went wrong, please try again later." });
             }
-        } catch (error) {
-                const msg = networkErr && networkErr.message ? networkErr.message : String(networkErr);
-                setButtonText("Send");
-                setStatus({ success: false, networkErr: { message: msg } });
-        }
+    } catch (networkErr) {
+        const msg = networkErr && networkErr.message ? networkErr.message : String(networkErr);
+        setButtonText("Send");
+        setStatus({ success: false, networkErr: { message: msg } });
+    }
     }
 
     return (

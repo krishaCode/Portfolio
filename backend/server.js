@@ -242,4 +242,4 @@ app.get('/send-sample-email', async (req, res) => {
 app.get('/health', (req, res) => res.json({ status: 'ok', emailConfigured: emailConfigured, rtdb: !!rtdb }));
 
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, '0.0.0.0', () => console.log(`🚀 Backend listening on http://localhost:${PORT}`));
+app.listen(PORT,  () => console.log(`🚀 Backend listening on http://localhost:${PORT}`));
