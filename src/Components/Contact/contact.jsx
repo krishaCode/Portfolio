@@ -47,8 +47,9 @@ function Contact() {
                 setStatus({ success: false, message: result.message || "Something went wrong, please try again later." });
             }
         } catch (error) {
-            setButtonText("Send");
-            setStatus({ success: false, message: "Network error, please try again later." });
+                const msg = networkErr && networkErr.message ? networkErr.message : String(networkErr);
+                setButtonText("Send");
+                setStatus({ success: false, networkErr: { message: msg } });
         }
     }
 

@@ -14,44 +14,48 @@ import './Projects.css';
 function Projects() {
     const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "FEDAS Farm Helping Web",
+      description: "Fedas system is given to real time Information about crop for farmers",
       imgUrl: projImg1,
       github: '#',
       linkedin: '#'
     },
+    
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-      github: '#',
-      linkedin: '#'
-    },
-    {
-      title: "Business Startup", 
-      description: "Design & Development",
+      title: "Smart Recipe Recommender", 
+      description: "AI-powered app that tracks food inventory, recognizes items, suggests recipes, and monitors expiry dates for smarter kitchen management.",
       imgUrl: projImg3,
       github: '#',
       linkedin: '#'
     },
     {
-      title: "Business Startup",
-      description: "Design & Development", 
+      title: "Farm Management System SUSL",
+      description: "Farm Management System SUSL is a digital platform for Agri Faculty staff to manage crops, livestock, schedule tasks, track inventory, and report efficiently.",
       imgUrl: projImg4,
       github: '#',
       linkedin: '#'
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Stockguard System",
+      description: "StockGuard is a smart inventory system with real-time stock monitoring, low-stock alerts, product management, data tracking, and a user-friendly interface.",
       imgUrl: projImg5,
       github: '#',
       linkedin: '#'
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "AutoHub - Car Sell web",
+      description: "Full-stack car selling platform with customer listings, bidding, real-time updates, advanced search, and an admin dashboard for car and bid management.",
       imgUrl: projImg6,
+      github: '#',
+      linkedin: '#'
+    }
+    ]
+
+    const mobileProjects = [
+    {
+      title: "BinGo", 
+      description: "BinGo is a mobile app that optimizes garbage collection with real-time route tracking, schedules, notifications, and an admin dashboard for efficient waste management.",
+      imgUrl: projImg2,
       github: '#',
       linkedin: '#'
     }
@@ -95,7 +99,13 @@ function Projects() {
                           </Row>
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
-                          <p>No available.</p>
+                          <Row>
+                            {
+                              mobileProjects.map((project, index) => (
+                                <ProjectCard key={index} {...project} />
+                              ))
+                            }
+                          </Row>
                         </Tab.Pane>
                         <Tab.Pane eventKey="third">
                           <p>No available.</p>
