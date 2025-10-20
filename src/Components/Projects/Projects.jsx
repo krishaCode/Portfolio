@@ -17,7 +17,7 @@ function Projects() {
       title: "FEDAS Farm Helping Web",
       description: "Fedas system is given to real time Information about crop for farmers",
       imgUrl: projImg1,
-      github: '#',
+      github: 'https://github.com/Nipunsen2k00/Agro_Squad.git',
       linkedin: '#'
     },
     
@@ -25,28 +25,28 @@ function Projects() {
       title: "Smart Recipe Recommender", 
       description: "AI-powered app that tracks food inventory, recognizes items, suggests recipes, and monitors expiry dates for smarter kitchen management.",
       imgUrl: projImg3,
-      github: '#',
+      github: 'https://github.com/DiliniChethana/Pantry_Finder.git',
       linkedin: '#'
     },
     {
       title: "Farm Management System SUSL",
       description: "Farm Management System SUSL is a digital platform for Agri Faculty staff to manage crops, livestock, schedule tasks, track inventory, and report efficiently.",
       imgUrl: projImg4,
-      github: '#',
+      github: 'https://github.com/sajithcode/farm-management-system-susl.git',
       linkedin: '#'
     },
     {
       title: "Stockguard System",
       description: "StockGuard is a smart inventory system with real-time stock monitoring, low-stock alerts, product management, data tracking, and a user-friendly interface.",
       imgUrl: projImg5,
-      github: '#',
+      github: 'https://github.com/krishaCode/capstone_project.git',
       linkedin: '#'
     },
     {
       title: "AutoHub - Car Sell web",
       description: "Full-stack car selling platform with customer listings, bidding, real-time updates, advanced search, and an admin dashboard for car and bid management.",
       imgUrl: projImg6,
-      github: '#',
+      github: 'https://github.com/krishaCode/SellCar_Project.git',
       linkedin: '#'
     }
     ]
@@ -56,7 +56,7 @@ function Projects() {
       title: "BinGo", 
       description: "BinGo is a mobile app that optimizes garbage collection with real-time route tracking, schedules, notifications, and an admin dashboard for efficient waste management.",
       imgUrl: projImg2,
-      github: '#',
+      github: 'https://github.com/InduwaraSH/BinGo.git',
       linkedin: '#'
     }
     ]
