@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import contactImg from '../../assets/img/contact-img.svg'
-import './contact.css'
+import React, { useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import contactImg from '../../assets/img/contact-img.svg';
+import './contact.css';
 
 function Contact() {
     const formInitialDetails = {
@@ -21,15 +20,15 @@ function Contact() {
         setFormDetails({
             ...formDetails,
             [category]: value
-        })
-    }
-    
+        });
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText("Sending...");
-        
+
         try {
-            // POST to backend via Vite dev proxy: /api -> http://localhost:8000
+            // POST to backend (Vite dev proxy or production Vercel)
             let response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
@@ -37,22 +36,22 @@ function Contact() {
                 },
                 body: JSON.stringify(formDetails),
             });
-            
-            setButtonText("Send");
+
             let result = await response.json();
+            setButtonText("Send");
             setFormDetails(formInitialDetails);
-            
+
             if (result.code === 200) {
                 setStatus({ success: true, message: result.message || "Message sent successfully!" });
             } else {
                 setStatus({ success: false, message: result.message || "Something went wrong, please try again later." });
             }
-    } catch (networkErr) {
-        const msg = networkErr && networkErr.message ? networkErr.message : String(networkErr);
-        setButtonText("Send");
-        setStatus({ success: false, networkErr: { message: msg } });
-    }
-    }
+        } catch (networkErr) {
+            const msg = networkErr && networkErr.message ? networkErr.message : String(networkErr);
+            setButtonText("Send");
+            setStatus({ success: false, networkErr: { message: msg } });
+        }
+    };
 
     return (
         <section className="contact" id="contact">
@@ -117,7 +116,7 @@ function Contact() {
                 </Row>
             </Container>
         </section>
-    )
+    );
 }
 
-export default Contact
+export default Contact;
